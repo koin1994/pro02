@@ -36,3 +36,42 @@ update custom set cuspw="ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed
 update custom set cuspw="03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4" where cusid="admin";
 update custom set level=9 where cusid="admin";
 commit;
+
+create table category(
+	cateNo int primary key auto_increment,
+	cateName varchar(50)
+);
+
+insert into category(cateName) values ("MAN");
+insert into category(cateName) values ("WOMEN");
+insert into category(cateName) values ("SPORT");
+insert into category(cateName) values ("CLASSIC");
+insert into category(cateName) values ("GOLD");
+insert into category(cateName) values ("POCKET");
+
+select * from category;
+commit;
+
+
+create table product(
+	proNo int primary key auto_increment,
+	cateNo int not null,
+	proName varchar(40) not null,
+	proSpec varchar(500),
+	oriPrice int not null,
+	discountRate double not null,
+	proPic varchar(200),
+	proPic2 varchar(200)
+);
+
+alter table notice add visited int default 0;
+
+commit;
+
+select * from product;
+
+update product set prono=1 where prono=3;
+
+delete from product;
+
+drop table product;

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>메인 페이지</title>
+<title>Tissot</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -14,17 +14,16 @@
 <style>
 .in_container { clear:both; width:1400px; margin:0 auto; }
 .in_container:after { content:""; display:block; clear:both; }
+.card-img-top {height: 15rem; object-fit : cover;}
 </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
-
-
-	<figure class="vs">
-        <iframe width="1910" height="600" src="https://www.youtube.com/embed/uzhXqkzY2gE" title="NEW! TISSOT PRX 35MM "OFF THE CUFF" ADVERTISING CAMPAIGN - SWISS WATCHES SINCE 1853" frameborder="0" allow="accelerometer; autoplay loop  muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </figure>
-	<div class="in_container" id="content" > 
-	<ul class="row" id="best">
+<figure class="vs">
+	<video width="2100" height="800" src="./img/video.mp4" autoplay loop muted style=" clear:both; width: 101%; height:auto; overflow:hidden;" ></video> 
+</figure>
+<div class="in_container" id="content" > 
+<ul class="row" id="best">
 	<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
 		<div class="card" style="width: 18rem;">
 		  <img src="./img/cla1.PNG" class="card-img-top" alt="이미지">

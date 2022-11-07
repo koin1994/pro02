@@ -45,6 +45,10 @@
 				<th>작성일시</th>
 				<td><%=vo.getResDate() %></td>
 			</tr>
+			<tr>
+				<th>방문 횟수</th>
+				<td><%=vo.getVisited() %></td>
+			</tr>
 		</tbody>
 	</table>
 	<div class="btn-group">

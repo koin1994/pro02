@@ -30,7 +30,7 @@ public class SearchMovieServlet extends HttpServlet {
 		//어제날짜로
 		String yesterday = sdf.format(System.currentTimeMillis()-86400000);
 		
-		String result = Jsonp.connect(url)		//매개변수 url 요청
+		String result = Jsoup.connect(url)		//매개변수 url 요청
 						.data("key",key)
 						.data("targetDt",yesterday)
 						.userAgent("Mozilla")
