@@ -15,12 +15,13 @@
 <style>
 .in_container { clear:both; width:1400px; margin:0 auto; }
 .in_container:after { content:""; display:block; clear:both; }
-.card-img-top {height: 15rem; object-fit : cover;}
+.card-img-top {height: 15rem; object-fit : cover; }
 
 </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
+
 <figure class="vs">
 	<video width="2100" height="800" src="./img/video.mp4" autoplay loop muted style=" clear:both; width: 101%; height:auto; overflow:hidden;" ></video> 
 </figure>
@@ -128,6 +129,7 @@
     
     <hr class="featurette-divider">
    
+  
     
     <div class="row">
   <div class="col-sm-6">

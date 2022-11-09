@@ -185,6 +185,11 @@ create table sales(
     parselNo int,
     salePayNo int
 );
+desc sales;
+select * from sales;
+select * from product where prono in (select prono from sales group by prono order by sum(amount) desc limit 4);
+-- select prono from sales group by prono order by sum(amount) desc limit 4;
+select * from product where prono in (select * from (select prono from sales group by prono order by sum(amount) desc limit 4) as tot);
 
 desc sales;
 select * from sales;
@@ -218,3 +223,44 @@ drop table parsel;
 select * from sales;
 
 select * from parsel;
+
+
+
+
+alter table parsel add column baleCode varchar(24); 
+
+desc parsel;
+select * from parsel;
+drop table parsel;
+
+create table cart(
+	cartNo int primary key auto_increment,
+    proNo int,
+    cusId varchar(13)
+);
+
+commit;
+
+create table qnaa(
+    no int primary key auto_increment,
+    title varchar(100) not null,
+    content varchar(1000) not null,
+    author varchar(20) not null,
+    resdate datetime default now(),
+    lev int default 0,            -- 깊이
+    parno int not null,          -- 부모글 번호
+    sec char(1)                     -- 비밀글 여부
+);
+
+
+insert into qnaa(title, content, author, lev, parno, sec)  values ("시계언제오나요.", "너무하네여.", "koin1994", 0, 1, "N");
+alter table qnaa add column visited int default 0; 
+alter table qnaa modify column parno int default ;
+select * from qnaa;
+drop table qnaa;
+select no from qnaa order by no desc limit 1;
+select no from qnaa order by resdate desc limit 1;
+update qnaa set parno=2 where no=2;
+commit;
+select no from qnaa order by resdate desc limit 1;
+delete from qnaa where no >= 6;

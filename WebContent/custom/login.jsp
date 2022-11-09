@@ -19,7 +19,7 @@
 </head>
 <body>
 <%@ include file="../header.jsp" %>
-<div class="content container" id="content" >
+<div class="content container-sm" id="content" >
 	<h2 class="title">로그인</h2>
 	<form name="frm1" id="frm1" action="<%=request.getContextPath() %>/CustomLoginCtrl" method="post" >
 		<table class="table">
@@ -27,19 +27,19 @@
 				<tr>
 					<th>아이디</th>
 					<td>
-						<input type="text" name="cusId" id="cusId" placeholder="아이디 입력" class="form-control" autofocus required  />
+						<input type="text" name="cusId" id="cusId" placeholder="아이디 입력" class="d-inline-flex p-2"" autofocus required  />
 					</td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
-					<td><input type="password" name="cusPw" id="cusPw" placeholder="비밀번호 입력" class="form-control" required /></td>
+					<td><input type="password" name="cusPw" id="cusPw" placeholder="비밀번호 입력" class="d-inline-flex p-2"" required /></td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="btn-group">
-			<input type="submit" name="submit-btn" class="btn btn-info" style="border-radius:4em; margin-right:4px;" value="로그인">
+			<input type="submit" name="submit-btn" class="btn btn-secondary" style="border-radius:4em; margin-right:30px;" value="로그인">
 			
-			<a href="<%=request.getContextPath() %>/custom/membership.jsp" class="btn btn-info" style="border-radius:4em;" >회원가입</a>
+			<a href="<%=request.getContextPath() %>/custom/membership.jsp" class="btn btn-secondary" style="border-radius:4em;" >회원가입</a>
 		</div>
 	</form>	
 </div>

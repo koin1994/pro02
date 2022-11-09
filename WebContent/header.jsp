@@ -4,7 +4,7 @@
 	String sid = (String) session.getAttribute("sid");
 	String sname = (String) session.getAttribute("sname");
 %>
-
+<link rel="icon" href="<%=request.getContextPath() %>/img/favicon.ico">
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 	<div class="in_container"> 
 	  <a class="navbar-brand" id="logo" href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath() %>/img/tissotlogo.svg" alt="logo" width="auto" height="auto;"></a>
@@ -40,17 +40,17 @@
 	        </a>
 	        <div class="dropdown-menu">
 	          <a class="dropdown-item" href="<%=request.getContextPath() %>/GetBoardListCtrl">Notice</a>
-	          <a class="dropdown-item" href="#">Q&A</a>
+	          <a class="dropdown-item" href="<%=request.getContextPath() %>/GetQnaListCtrl">QnA</a>
 	          <a class="dropdown-item" href="#">Use After</a>
 	        </div>
 	      </li>
 	    </ul>
 		<ul class="nav justify-content-end">
 		  <% if(sid!=null) { %>
-			  <li class="nav-item">
-			    <span class="nav-link" style="color:white;"><%=sname %>님</span>
+			  <li class="nav-item" style="color:white;">
+			    <span class="nav-link"><%=sname %>님</span>
 			  </li>
-			  <li class="nav-item">
+			  <li class="nav-item" >
 			    <a class="nav-link active" style="color:gray" href="<%=request.getContextPath() %>/LogOutCtrl">로그아웃</a>
 			  </li>
 			  <li class="nav-item">
@@ -60,6 +60,13 @@
 				  <li class="nav-item">
 				    <a class="nav-link" style="color:gray" href="<%=request.getContextPath() %>/admin/index.jsp">관리자 페이지로</a>
 				  </li>
+			  <% } else { %>
+			  <li class="nav-item">
+			    <a class="nav-link" style="color:gray" href="<%=request.getContextPath() %>/GetMemberSalesInfoCtrl">구매내역</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" style="color:gray" href="<%=request.getContextPath() %>/GetMemberCartListCtrl">장바구니</a>
+			  </li>
 			  <% } %>
 		  <% } else { %>
 			  <li class="nav-item">
@@ -69,9 +76,6 @@
 			    <a class="nav-link" style="color:gray" href="<%=request.getContextPath() %>/custom/membership.jsp">회원가입</a>
 			  </li>
 		  <% } %>
-		  <li class="nav-item">
-		    <a class="nav-link" style="color:gray" href="#">Contact</a>
-		  </li>
 		</ul>	    
 	  </div>
 	</div>
